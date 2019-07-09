@@ -1,5 +1,3 @@
-const path = require("path");
-
 function build(config) {
   const jestConfig = {};
   const setupFiles = [require.resolve(__dirname, "./polyfills.js")];
@@ -29,7 +27,7 @@ function build(config) {
         __dirname,
         "./file-mock.js"
       ),
-      "^.+\\.tsx?$": path.resolve("babel-jest")
+      "^.+\\.tsx?$": require.resolve("babel-jest")
     },
     testRegex: "(/__tests__/.*|(\\.|/)spec)\\.tsx?$",
     moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
