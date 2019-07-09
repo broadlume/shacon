@@ -2,11 +2,11 @@ const path = require("path");
 
 function build(config) {
   const jestConfig = {};
-  const setupFiles = [require.resolve(__dirname, "./polyfills")];
+  const setupFiles = [require.resolve(__dirname, "./polyfills.js")];
 
   if (config && config.react) {
     Object.assign(jestConfig, {
-      setupFilesAfterEnv: [require.resolve(__dirname, "jest-enzyme")],
+      setupFilesAfterEnv: [require.resolve(__dirname, "./setup-jest.js")],
       testEnvironment: "enzyme",
       testEnvironmentOptions: {
         enzymeAdapter: "react16"
