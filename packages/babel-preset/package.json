@@ -3,8 +3,10 @@
   "version": "0.1.1",
   "description": "Babel preset for compiling Typescript/Javascript",
   "author": "Ian Ker-Seymer <ian@tryadhawk.com>",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "index.js",
-  "private": false,
   "keywords": [
     "babel",
     "typescript",
