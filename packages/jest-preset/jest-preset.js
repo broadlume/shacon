@@ -29,7 +29,7 @@ function build(config) {
         __dirname,
         "./file-mock.js"
       ),
-      "^.+\\.tsx?$": require.resolve("babel-jest")
+      "^.+\\.tsx?$": path.resolve(__dirname, "babel-jest.js")
     },
     testRegex: "(/__tests__/.*|(\\.|/)spec)\\.tsx?$",
     moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
