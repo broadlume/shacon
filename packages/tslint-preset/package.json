@@ -1,0 +1,30 @@
+{
+  "name": "@adhawk/tslint-preset",
+  "version": "0.0.0",
+  "description": "TSLint preset for checking Typescript",
+  "author": "Ian Ker-Seymer <ian@tryadhawk.com>",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "index.json",
+  "keywords": [
+    "tslint",
+    "typescript",
+    "adhawk"
+  ],
+  "scripts": {
+    "pretest": "npm run lint",
+    "test": "node . && echo 'parsed successfully'",
+    "lint": "prettier -c ./index.json"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "tslint-config-prettier": "^1.18.0"
+  },
+  "peerDependencies": {
+    "tslint": "^5.18.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.18.2"
+  }
+}

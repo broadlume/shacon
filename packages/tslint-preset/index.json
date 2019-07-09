@@ -1,0 +1,22 @@
+{
+  "extends": ["tslint:latest", "tslint-config-prettier"],
+  "rules": {
+    "interface-name": false,
+    "ordered-imports": false,
+    "no-submodule-imports": false,
+    "max-classes-per-file": false,
+    "no-implicit-dependencies": false,
+    "object-literal-sort-keys": false,
+    "prefer-conditional-expression": false,
+    "member-access": false,
+    "no-reference": false,
+    "no-restricted-globals": true,
+    "ban": [
+      true,
+      {
+        "name": "get",
+        "message": "lodash.get is not typesafe, use idx instead"
+      }
+    ]
+  }
+}
