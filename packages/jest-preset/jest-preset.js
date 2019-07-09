@@ -1,10 +1,12 @@
+const { path } = require("path");
+
 function build(config) {
   const jestConfig = {};
-  const setupFiles = [require.resolve(__dirname, "./polyfills.js")];
+  const setupFiles = [path.resolve(__dirname, "./polyfills.js")];
 
   if (config && config.react) {
     Object.assign(jestConfig, {
-      setupFilesAfterEnv: [require.resolve(__dirname, "./setup-jest.js")],
+      setupFilesAfterEnv: [path.resolve(__dirname, "./setup-jest.js")],
       testEnvironment: "enzyme",
       testEnvironmentOptions: {
         enzymeAdapter: "react16"
@@ -23,7 +25,7 @@ function build(config) {
     ],
     transform: {
       "\\.(gql|graphql)$": require.resolve("jest-transform-graphql"),
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": require.resolve(
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": path.resolve(
         __dirname,
         "./file-mock.js"
       ),
@@ -37,7 +39,7 @@ function build(config) {
     modulePathIgnorePatterns: ["/__helpers__/"],
     moduleNameMapper: {
       "\\.(scss|css|less)$": require.resolve("identity-obj-proxy"),
-      "\\.(yml)": require.resolve(__dirname, "./string-proxy.js")
+      "\\.(yml)": path.resolve(__dirname, "./string-proxy.js")
     }
   };
 }
