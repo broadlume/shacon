@@ -4,6 +4,7 @@
   "description": "Babel preset for compiling Typescript/Javascript",
   "author": "Ian Ker-Seymer <ian@tryadhawk.com>",
   "main": "index.js",
+  "private": false,
   "keywords": [
     "babel",
     "typescript",
