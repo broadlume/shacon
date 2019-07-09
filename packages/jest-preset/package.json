@@ -1,0 +1,32 @@
+{
+  "name": "@adhawk/jest-preset",
+  "version": "0.0.0",
+  "description": "Jest preset for testing Typescript/Javascript",
+  "author": "Ian Ker-Seymer <ian@tryadhawk.com>",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "jest-preset.js",
+  "keywords": [
+    "jest",
+    "typescript"
+  ],
+  "scripts": {
+    "pretest": "npm run lint",
+    "test": "node ./jest-preset.js && echo 'parsed successfully'",
+    "lint": "prettier -c '**/*.js'"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "identity-obj-proxy": "^3.0.0",
+    "jest-enzyme": "^7.0.2",
+    "jest-transform-graphql": "^2.1.0",
+    "react-app-polyfill": "^1.0.1"
+  },
+  "peerDependencies": {
+    "jest": "^24.8.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.18.2"
+  }
+}
