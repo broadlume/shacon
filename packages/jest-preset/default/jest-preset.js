@@ -7,7 +7,8 @@ module.exports = {
     "/packages/webpack-config/",
     "/packages/common/",
     "/packages/bootstrap-theme/",
-    "/packages/analytics/"
+    "/packages/analytics/",
+    "/packages/fs-wordpress-plugin/"
   ],
   transform: {
     "\\.(gql|graphql)$": require.resolve("jest-transform-graphql"),
