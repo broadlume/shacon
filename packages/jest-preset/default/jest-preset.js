@@ -6,7 +6,8 @@ module.exports = {
     "/stories/",
     "/packages/webpack-config/",
     "/packages/common/",
-    "/packages/bootstrap-theme/"
+    "/packages/bootstrap-theme/",
+    "/packages/analytics/"
   ],
   transform: {
     "\\.(gql|graphql)$": require.resolve("jest-transform-graphql"),
