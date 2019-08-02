@@ -1,5 +1,6 @@
 {
   "extends": ["tslint:latest", "tslint-config-prettier"],
+  "rulesDirectory": ["node_modules/tslint-microsoft-contrib"],
   "rules": {
     "interface-name": false,
     "ordered-imports": false,
@@ -17,6 +18,7 @@
         "name": "get",
         "message": "lodash.get is not typesafe, use idx instead"
       }
-    ]
+    ],
+    "a11y-img-has-alt": [true, ["Image", "img"]]
   }
 }
