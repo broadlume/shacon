@@ -1,6 +1,6 @@
 {
   "name": "@adhawk/tslint-preset",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "TSLint preset for checking Typescript",
   "author": "Ian Ker-Seymer <ian@tryadhawk.com>",
   "publishConfig": {
