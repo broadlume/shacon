@@ -2,6 +2,7 @@ const { kebabCase } = require("lodash");
 const { declare } = require("@babel/helper-plugin-utils");
 
 const optimizationPlugins = [
+  "babel-plugin-graphql-tag",
   "babel-plugin-lodash",
   "babel-plugin-idx",
   [

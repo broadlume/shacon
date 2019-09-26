@@ -19,8 +19,10 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@babel/core": "^7.6.2",
     "@babel/helper-plugin-utils": "^7.0.0",
     "babel-core": "^7.0.0-bridge.0",
+    "babel-plugin-graphql-tag": "^2.5.0",
     "babel-plugin-idx": "^2.4.0",
     "babel-plugin-lodash": "^3.3.4",
     "babel-plugin-transform-imports": "^2.0.0",
