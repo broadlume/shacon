@@ -2,11 +2,11 @@ const { kebabCase } = require("lodash");
 const { declare } = require("@babel/helper-plugin-utils");
 
 const optimizationPlugins = [
-  "babel-plugin-graphql-tag",
-  "babel-plugin-lodash",
-  "babel-plugin-idx",
+  require.resolve("babel-plugin-graphql-tag"),
+  require.resolve("babel-plugin-lodash"),
+  require.resolve("babel-plugin-idx"),
   [
-    "babel-plugin-transform-imports",
+    require.resolve("babel-plugin-transform-imports"),
     {
       reactstrap: {
         transform: "reactstrap/lib/${member}",
@@ -26,7 +26,12 @@ module.exports = declare((api, _options) => {
   api.assertVersion("^7.0.0");
 
   return {
-    presets: [["react-app", { flow: false, typescript: true }]],
+    presets: [
+      [
+        require.resolve("babel-preset-react-app"),
+        { flow: false, typescript: true }
+      ]
+    ],
     env: {
       development: {
         // We use these in development to catch errors early. However we cannot
