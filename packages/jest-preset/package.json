@@ -1,6 +1,6 @@
 {
   "name": "@adhawk/jest-preset",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "description": "Jest preset for testing Typescript/Javascript",
   "author": "Ian Ker-Seymer <ian@tryadhawk.com>",
   "publishConfig": {
@@ -18,7 +18,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@adhawk/babel-preset": "^0.3.1",
+    "@adhawk/babel-preset": "^0.3.2",
     "babel-jest": "^24.8.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
