@@ -32,7 +32,7 @@ module.exports = declare((api, _options) => {
         { flow: false, typescript: true }
       ]
     ],
-    plugins: ["@babel/plugin-proposal-optional-chaining"],
+    plugins: [require.resolve("@babel/plugin-proposal-optional-chaining")],
     env: {
       development: {
         // We use these in development to catch errors early. However we cannot
