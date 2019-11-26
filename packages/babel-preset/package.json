@@ -19,7 +19,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@babel/core": "^7.6.2",
+    "@babel/core": "^7.7.4",
+    "@babel/helper-create-regexp-features-plugin": "^7.7.4",
     "@babel/helper-plugin-utils": "^7.0.0",
     "@babel/plugin-proposal-optional-chaining": "^7.6.0",
     "babel-core": "^7.0.0-bridge.0",
