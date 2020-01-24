@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
   ...require("./../default/jest-preset"),
-  setupFilesAfterEnv: [path.resolve(__dirname, "./../setup-jest.js")],
+  setupFilesAfterEnv: [require.resolve("jest-enzyme")],
   testEnvironment: "enzyme",
   testEnvironmentOptions: {
     enzymeAdapter: "react16"
