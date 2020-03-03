@@ -1,6 +1,6 @@
 {
   "name": "@adhawk/jest-preset",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Jest preset for testing Typescript/Javascript",
   "author": "Ian Ker-Seymer <ian@tryadhawk.com>",
   "publishConfig": {
