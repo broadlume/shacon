@@ -9,7 +9,7 @@ const optimizationPlugins = [
     require.resolve("babel-plugin-transform-imports"),
     {
       reactstrap: {
-        transform: "reactstrap/lib/${member}",
+        transform: "reactstrap/es/${member}",
         preventFullImport: true
       },
       "@franchises/form-helpers": {
