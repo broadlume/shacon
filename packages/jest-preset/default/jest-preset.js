@@ -8,7 +8,7 @@ module.exports = {
     "/packages/common/",
     "/packages/bootstrap-theme/",
     "/packages/analytics/",
-    "/packages/fs-wordpress-plugin/"
+    "/packages/fs-wordpress-plugin/",
   ],
   transform: {
     "\\.(gql|graphql)$": require.resolve("jest-transform-graphql"),
@@ -16,7 +16,7 @@ module.exports = {
       __dirname,
       "./../file-mock.js"
     ),
-    "^.+\\.tsx?$": path.resolve(__dirname, "./../babel-jest.js")
+    "^.+\\.tsx?$": path.resolve(__dirname, "./../babel-jest.js"),
   },
   testRegex: "(/__tests__/.*|(\\.|/)spec)\\.tsx?$",
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
@@ -25,6 +25,6 @@ module.exports = {
   modulePathIgnorePatterns: ["/__helpers__/"],
   moduleNameMapper: {
     "\\.(scss|css|less)$": require.resolve("identity-obj-proxy"),
-    "\\.(yml)": path.resolve(__dirname, "./../string-proxy.js")
-  }
+    "\\.(yml)": path.resolve(__dirname, "./../string-proxy.js"),
+  },
 };
