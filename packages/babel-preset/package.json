@@ -25,14 +25,14 @@
     "@babel/plugin-proposal-optional-chaining": "^7.6.0",
     "@babel/plugin-syntax-jsx": "^7.8.3",
     "babel-core": "^7.0.0-bridge.0",
-    "babel-plugin-graphql-tag": "^2.5.0",
+    "babel-plugin-graphql-tag": "^3.1.0",
     "babel-plugin-idx": "^2.4.0",
     "babel-plugin-lodash": "^3.3.4",
     "babel-plugin-transform-imports": "^2.0.0",
     "babel-preset-react-app": "^9.0.0",
-    "graphql": "^14.5.8"
+    "graphql": "^15.3.0"
   },
   "devDependencies": {
-    "prettier": "^1.18.2"
+    "prettier": "^2.1.2"
   }
 }

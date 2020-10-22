@@ -14,7 +14,7 @@ function buildFakeAnalytics() {
     "alias",
     "debug",
     "page",
-    "on"
+    "on",
     // "trackSubmit",
     // "trackClick",
     // "pageview",
@@ -22,7 +22,7 @@ function buildFakeAnalytics() {
     // "off",
   ];
 
-  methods.forEach(key => {
+  methods.forEach((key) => {
     analytics[key] = noop;
   });
 
