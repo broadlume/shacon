@@ -1,6 +1,6 @@
 {
   "name": "@adhawk/babel-preset",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "description": "Babel preset for compiling Typescript/Javascript",
   "author": "Ian Ker-Seymer <ian@tryadhawk.com>",
   "publishConfig": {
