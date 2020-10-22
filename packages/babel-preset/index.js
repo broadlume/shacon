@@ -10,16 +10,16 @@ const optimizationPlugins = [
     {
       reactstrap: {
         transform: "reactstrap/es/${member}",
-        preventFullImport: true
+        preventFullImport: true,
       },
       "@franchises/form-helpers": {
-        transform: importName =>
+        transform: (importName) =>
           `@franchises/form-helpers/src/${kebabCase(importName)}`,
         preventFullImport: true,
-        skipDefaultConversion: true
-      }
-    }
-  ]
+        skipDefaultConversion: true,
+      },
+    },
+  ],
 ];
 
 module.exports = declare((api, _options) => {
@@ -29,8 +29,8 @@ module.exports = declare((api, _options) => {
     presets: [
       [
         require.resolve("babel-preset-react-app"),
-        { flow: false, typescript: true }
-      ]
+        { flow: false, typescript: true },
+      ],
     ],
     plugins: [require.resolve("@babel/plugin-proposal-optional-chaining")],
     env: {
@@ -38,11 +38,11 @@ module.exports = declare((api, _options) => {
         // We use these in development to catch errors early. However we cannot
         // use them in the test env because it breaks coverage, amongst other
         // things.
-        plugins: optimizationPlugins
+        plugins: optimizationPlugins,
       },
       production: {
-        plugins: optimizationPlugins
-      }
-    }
+        plugins: optimizationPlugins,
+      },
+    },
   };
 });
