@@ -1,6 +1,6 @@
 {
   "name": "@adhawk/jest-preset",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Jest preset for testing Typescript/Javascript",
   "author": "Ian Ker-Seymer <ian@tryadhawk.com>",
   "publishConfig": {
@@ -18,7 +18,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@adhawk/babel-preset": "^1.0.0",
+    "@adhawk/babel-preset": "^1.1.0",
     "@babel/core": "^7.6.2",
     "@types/jest": "^26.0.9",
     "babel-jest": "^26.3.0",
@@ -34,12 +34,12 @@
   },
   "devDependencies": {
     "lerna": "^3.15.0",
-    "rimraf": "^3.0.2",
-    "prettier": "^2.1.2"
+    "prettier": "^2.1.2",
+    "rimraf": "^3.0.2"
   },
   "peerDependencies": {
+    "graphql": "^15.3.0",
     "react": ">=16.14.0",
-    "react-dom": ">=16.14.0",
-    "graphql": "^15.3.0"
+    "react-dom": ">=16.14.0"
   }
 }
