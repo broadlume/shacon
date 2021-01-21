@@ -19,6 +19,7 @@
   "license": "MIT",
   "dependencies": {
     "@adhawk/babel-preset": "^1.2.1",
+    "@babel/core": "7.12.3",
     "@types/jest": "^26.0.9",
     "babel-jest": "^26.3.0",
     "enzyme": ">=3.10.0",
