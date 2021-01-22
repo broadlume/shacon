@@ -1,5 +1,6 @@
 const { kebabCase } = require("lodash");
 const { declare } = require("@babel/helper-plugin-utils");
+const path = require("path");
 
 const optimizationPlugins = [
   require.resolve("babel-plugin-graphql-tag"),
@@ -27,7 +28,7 @@ const optimizationPlugins = [
   ],
 ];
 
-module.exports = declare((api, _options) => {
+module.exports = declare((api, opts) => {
   api.assertVersion("^7.0.0");
 
   const env = process.env.BABEL_ENV || process.env.NODE_ENV;
@@ -37,18 +38,39 @@ module.exports = declare((api, _options) => {
 
   return {
     presets: [
+      isEnvTest && [
+        // ES features necessary for user's Node version
+        require("@babel/preset-env").default,
+        {
+          targets: {
+            node: "current",
+          },
+        },
+      ],
+      (isEnvProduction || isEnvDevelopment) && [
+        // Latest stable ECMAScript features
+        require("@babel/preset-env").default,
+        {
+          // Allow importing core-js in entrypoint and use browserlist to select polyfills
+          useBuiltIns: "entry",
+          // Set the corejs version we are using to avoid warnings in console
+          corejs: 3,
+          // Exclude transforms that make all code slower
+          exclude: ["transform-typeof-symbol"],
+        },
+      ],
       [
         require.resolve("@babel/preset-react"),
         {
           // Adds component stack to warning messages
           // Adds __self attribute to JSX which React will use for some warnings
           development: isEnvDevelopment || isEnvTest,
-          useBuiltIns: true,
-          runtime: "automatic",
+          ...(opts.runtime !== "automatic" ? { useBuiltIns: true } : {}),
+          runtime: opts.runtime || "classic",
         },
       ],
       require.resolve("@babel/preset-typescript"),
-    ],
+    ].filter(Boolean),
     plugins: [
       // Optional chaining and nullish coalescing are supported in @babel/preset-env,
       // but not yet supported in webpack due to support missing from acorn.
@@ -74,7 +96,7 @@ module.exports = declare((api, _options) => {
         require.resolve("@babel/plugin-transform-runtime"),
         {
           corejs: false,
-          helpers: false,
+          helpers: !!opts.helpers,
           // By default, babel assumes babel/runtime version 7.0.0-beta.0,
           // explicitly resolving to match the provided helper functions.
           // https://github.com/babel/babel/issues/10261
@@ -112,19 +134,7 @@ module.exports = declare((api, _options) => {
         plugins: optimizationPlugins,
       },
       production: {
-        plugins: [
-          ...optimizationPlugins,
-          // Latest stable ECMAScript features
-          require.resolve("@babel/preset-env"),
-          {
-            // Allow importing core-js in entrypoint and use browserlist to select polyfills
-            useBuiltIns: "entry",
-            // Set the corejs version we are using to avoid warnings in console
-            corejs: 3,
-            // Exclude transforms that make all code slower
-            exclude: ["transform-typeof-symbol"],
-          },
-        ],
+        plugins: optimizationPlugins,
       },
     },
   };
