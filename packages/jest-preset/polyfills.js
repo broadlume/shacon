@@ -26,6 +26,14 @@ function buildFakeAnalytics() {
     analytics[key] = noop;
   });
 
+  analytics.user = function() {
+    return {
+      traits() {
+        return { foo: 'bar' }
+      }
+    }
+  }
+
   return analytics;
 }
 

@@ -69,7 +69,10 @@ module.exports = declare((api, opts) => {
           runtime: opts.runtime || "classic",
         },
       ],
-      require.resolve("@babel/preset-typescript"),
+      [
+        require.resolve("@babel/preset-typescript"),
+        { optimizeConstEnums: true },
+      ],
     ].filter(Boolean),
     plugins: [
       // Optional chaining and nullish coalescing are supported in @babel/preset-env,
