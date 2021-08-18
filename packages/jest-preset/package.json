@@ -19,18 +19,18 @@
   "license": "MIT",
   "dependencies": {
     "@adhawk/babel-preset": "^2.0.2",
-    "@babel/core": "7.12.3",
-    "@types/jest": "^26.0.9",
-    "babel-jest": "^26.3.0",
-    "enzyme": ">=3.10.0",
-    "enzyme-adapter-react-16": ">=1.14.0",
-    "graphql": "^15.3.0",
+    "@babel/core": "^7.15.0",
+    "@types/jest": "^27.0.1",
+    "babel-jest": "^27.0.6",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "graphql": "^15.5.1",
     "identity-obj-proxy": "^3.0.0",
-    "jest": ">=26.4.0",
-    "jest-enzyme": ">=7.0.2",
+    "jest": "^27.0.6",
+    "jest-enzyme": "^7.1.2",
     "jest-transform-graphql": "^2.1.0",
-    "react-app-polyfill": "^1.0.1",
-    "ts-jest": "^26.4.1"
+    "react-app-polyfill": "^2.0.0",
+    "ts-jest": "^27.0.5"
   },
   "devDependencies": {
     "lerna": "^3.15.0",
