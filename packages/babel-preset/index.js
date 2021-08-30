@@ -38,27 +38,28 @@ module.exports = declare((api, opts) => {
 
   return {
     presets: [
-      isEnvTest && [
-        // ES features necessary for user's Node version
-        require("@babel/preset-env").default,
-        {
-          targets: {
-            node: "current",
-          },
-        },
-      ],
-      (isEnvProduction || isEnvDevelopment) && [
-        // Latest stable ECMAScript features
-        require("@babel/preset-env").default,
-        {
-          // Allow importing core-js in entrypoint and use browserlist to select polyfills
-          useBuiltIns: "entry",
-          // Set the corejs version we are using to avoid warnings in console
-          corejs: 3,
-          // Exclude transforms that make all code slower
-          exclude: ["transform-typeof-symbol"],
-        },
-      ],
+      opts.node || isEnvTest
+        ? [
+            // ES features necessary for user's Node version
+            require("@babel/preset-env").default,
+            {
+              targets: {
+                node: "current",
+              },
+            },
+          ]
+        : [
+            // Latest stable ECMAScript features
+            require("@babel/preset-env").default,
+            {
+              // Allow importing core-js in entrypoint and use browserlist to select polyfills
+              useBuiltIns: "entry",
+              // Set the corejs version we are using to avoid warnings in console
+              corejs: 3,
+              // Exclude transforms that make all code slower
+              exclude: ["transform-typeof-symbol"],
+            },
+          ],
       [
         require.resolve("@babel/preset-react"),
         {
@@ -108,7 +109,7 @@ module.exports = declare((api, opts) => {
           // https://babeljs.io/docs/en/babel-plugin-transform-runtime#useesmodules
           // We should turn this on once the lowest version of Node LTS
           // supports ES Modules.
-          useESModules: isEnvDevelopment || isEnvProduction,
+          useESModules: (isEnvDevelopment || isEnvProduction) && !opts.node,
           // Undocumented option that lets us encapsulate our runtime, ensuring
           // the correct version is used
           // https://github.com/babel/babel/blob/090c364a90fe73d36a30707fc612ce037bdbbb24/packages/babel-plugin-transform-runtime/src/index.js#L35-L42
