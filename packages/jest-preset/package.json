@@ -18,7 +18,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@adhawk/babel-preset": "^2.0.4",
+    "@adhawk/babel-preset": "^2.0.5",
     "@babel/core": "^7.15.0",
     "@types/jest": "^27.0.1",
     "babel-jest": "^27.0.6",
